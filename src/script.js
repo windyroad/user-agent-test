@@ -12,8 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
             browserStatusParagraph.innerHTML = '✅ Your Browser is Edge. You are not in IE11 compatibility mode.';
         } else if (result.browser.name === 'IE') {
             browserStatusParagraph.innerHTML = '❌ Your Browser is IE. The attempt to force Edge mode failed.';
-            document.cookie = "compatibilityMode=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            document.location.reload();
+
+            // Check if we've already attempted a reload
+            if (!document.cookie.includes("compatibilityModeReloaded=true")) {
+                // Set a cookie to mark that we've attempted a reload
+                document.cookie = "compatibilityModeReloaded=true; path=/";
+                // Reload the page
+                document.location.reload();
+            } else {
+                // If we've already reloaded once, clear the cookie to avoid future reloads
+                document.cookie = "compatibilityModeReloaded=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
         } else {
             // For browsers like Chrome, Safari, etc., no error message is shown.
             browserStatusParagraph.innerHTML = '🌐 Your Browser is ' + result.browser.name + '. No compatibility mode issues.';
