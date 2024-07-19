@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set a cookie to mark that we've attempted a reload
             // document.cookie = "compatibilityModeReloaded=true; path=/";
             // Reload the page
-            var newUrl = 'https://google.com.au/';
+            var newUrl = 'https://www.google.com/';
             window.location.href = newUrl;
         } else {
             // For browsers like Chrome, Safari, etc., no error message is shown.
