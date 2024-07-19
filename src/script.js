@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Set a cookie to mark that we've attempted a reload
                 document.cookie = "compatibilityModeReloaded=true; path=/";
                 // Reload the page
-                document.location.reload();
+                var newUrl = window.location.href + (window.location.href.includes('?') ? '&' : '?') + 'forceReload=' + new Date().getTime();
+                window.location.href = newUrl;
             } else {
                 // If we've already reloaded once, clear the cookie to avoid future reloads
                 document.cookie = "compatibilityModeReloaded=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
