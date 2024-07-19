@@ -5,6 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update Browser Name in Heading
     document.getElementById('browserName').textContent = 'Your Browser: ' + result.browser.name;
     
+    // Check if the browser is Edge and update the paragraph
+    var browserStatusParagraph = document.querySelector('p');
+    if(browserStatusParagraph) {
+        if (result.browser.name === 'Edge') {
+            browserStatusParagraph.innerHTML = '✅ Your Browser is Edge. You are not in IE11 compatibility mode.';
+        } else if (result.browser.name === 'IE') {
+            browserStatusParagraph.innerHTML = '❌ Your Browser is IE. The attempt to force Edge mode failed.';
+        } else {
+            // For browsers like Chrome, Safari, etc., no error message is shown.
+            browserStatusParagraph.innerHTML = '🌐 Your Browser is ' + result.browser.name + '. No compatibility mode issues.';
+        }
+    }
     // Fill Table with UAParser Details
     var detailsTable = document.getElementById('uaDetails').getElementsByTagName('tbody')[0];
     Object.keys(result).forEach(function(key) {
