@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set a cookie to mark that we've attempted a reload
             // document.cookie = "compatibilityModeReloaded=true; path=/";
             // Reload the page
-            var newUrl = window.location.href + (window.location.href.includes('?') ? '&' : '?') + 'forceReload=' + new Date().getTime();
+            var hasQuery = window.location.href.indexOf('?') !== -1;
+            var newUrl = window.location.href + (hasQuery ? '&' : '?') + 'forceReload=' + new Date().getTime();
             window.location.href = newUrl;
         } else {
             // For browsers like Chrome, Safari, etc., no error message is shown.
