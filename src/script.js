@@ -12,18 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
             browserStatusParagraph.innerHTML = '✅ Your Browser is Edge. You are not in IE11 compatibility mode.';
         } else if (result.browser.name === 'IE') {
             browserStatusParagraph.innerHTML = '❌ Your Browser is IE. The attempt to force Edge mode failed.';
-
-            // Check if we've already attempted a reload
-            if (!document.cookie.includes("compatibilityModeReloaded=true")) {
-                // Set a cookie to mark that we've attempted a reload
-                document.cookie = "compatibilityModeReloaded=true; path=/";
-                // Reload the page
-                var newUrl = window.location.href + (window.location.href.includes('?') ? '&' : '?') + 'forceReload=' + new Date().getTime();
-                window.location.href = newUrl;
-            } else {
-                // If we've already reloaded once, clear the cookie to avoid future reloads
-                document.cookie = "compatibilityModeReloaded=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            }
+            // Set a cookie to mark that we've attempted a reload
+            // document.cookie = "compatibilityModeReloaded=true; path=/";
+            // Reload the page
+            var newUrl = "https://www.google.com";
+            // var newUrl = window.location.href + (window.location.href.includes('?') ? '&' : '?') + 'forceReload=' + new Date().getTime();
+            window.location.href = newUrl;
         } else {
             // For browsers like Chrome, Safari, etc., no error message is shown.
             browserStatusParagraph.innerHTML = '🌐 Your Browser is ' + result.browser.name + '. No compatibility mode issues.';
