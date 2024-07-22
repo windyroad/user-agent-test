@@ -6,6 +6,12 @@
     <title>User Agent Display</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.28/ua-parser.min.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css/out/water.css">
+    <script>
+        function openInEdge() {
+            window.open("force-edge.html", '_blank');
+            window.close();
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -29,7 +35,7 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="force-edge.html">Force Edge</a></li>
+            <li><a href="javascript:void(0);" onclick="openInEdge();">Force Edge</a></li>
             <li><a href="force-edge-in-iframe.html">Force Edge In IFrame</a></li>
         </ul>
     </nav>
