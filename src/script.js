@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set a cookie to mark that we've attempted a reload
             // document.cookie = "compatibilityModeReloaded=true; path=/";
             // Reload the page
-            var newUrl = 'https://www.google.com/';
-            window.location.href = newUrl;
+            if( window.location.href.includes('google') ) {
+                var newUrl = 'https://www.google.com/';
+                window.location.href = newUrl;
+            }
         } else {
             // For browsers like Chrome, Safari, etc., no error message is shown.
             browserStatusParagraph.innerHTML = '🌐 Your Browser is ' + result.browser.name + '. No compatibility mode issues.';
