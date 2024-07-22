@@ -12,7 +12,7 @@
             window.close();
         }
 
-        function open(element) {
+        function jsOpen(element) {
             window.location.href = element.href;
         }
 
@@ -41,14 +41,14 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="force-edge.html">Force Edge</a></li>
-            <li><a href="force-edge.html" onclick="open(this); return false;">JS Force Edge</a></li>
+            <li><a href="force-edge.html" onclick="jsOpen(this); return false;">JS Force Edge</a></li>
             <li><a href="force-edge.html" onclick="openInEdge(this);">JS New Tab Force Edge</a></li>
-            <li><a href="force-edge-google.html">Force Edge Google</a></li>
             <li><a href="force-edge-in-iframe.html">Force Edge In IFrame</a></li>
             <li><a href="https://www.google.com.au">Google Direct</a></li>
-            <li><a href="https://www.google.com.au" onclick="open(this); return false;">JS Google Direct</a></li>
+            <li><a href="https://www.google.com.au" onclick="jsOpen(this); return false;">JS Google Direct</a></li>
             <li><a href="google">Google Proxy</a></li>
             <li><a href="google-au">Google AU Proxy</a></li>
+            <li><a href="force-edge-google.html">Force Edge Google 👈 This breaks out of IE mode!</a></li>
         </ul>
     </nav>
 
