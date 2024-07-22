@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Set a cookie to mark that we've attempted a reload
             // document.cookie = "compatibilityModeReloaded=true; path=/";
             // Reload the page
-            if( window.location.href.includes('google') ) {
+            if( window.location.href.indexOf('google') !== -1 ) {
                 var newUrl = 'https://www.google.com/';
                 window.location.href = newUrl;
             }
