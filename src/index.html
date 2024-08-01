@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css/out/water.css">
     <script>
         function openInEdge(element) {
-            window.open(element.href, '_blank');
+            window.open(element.href, element.target || '_blank' );
             window.close();
         }
 
@@ -53,6 +53,8 @@
             <li><a href="force-edge-google.html">Force Edge Google 👈 This breaks out of IE mode!</a></li>
             <li><a href="https://one.sit1.ui.westpac.com.au/europa/mandatedpayment?contextRefId=_jKBWQyqe" onclick="jsOpen(this); return false;">JS Europa</a></li>
             <li><a href="https://one.sit1.ui.westpac.com.au/europa/mandatedpayment?contextRefId=_jKBWQyqe">Europa</a></li>
+            <li><a href="https://one.sit1.ui.westpac.com.au/europa/mandatedpayment?contextRefId=_jKBWQyqe" target="_blank">Europa Tab</a></li>
+            <li><a href="https://one.sit1.ui.westpac.com.au/europa/mandatedpayment?contextRefId=_jKBWQyqe" target="_blank" onclick="openInEdge(this); return false;">JS Europa Tab</a></li>
         </ul>
     </nav>
 
